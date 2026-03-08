@@ -7,12 +7,12 @@ import {
 
 const API = "http://127.0.0.1:8000";
 
-const fmt = (n) => typeof n === "number" ? n.toFixed(2) : n;
-const fmtEur = (n) => `€${Number(n).toLocaleString("en", { minimumFractionDigits: 2 })}`;
+const fmt = (n: any) => typeof n === "number" ? n.toFixed(2) : n;
+const fmtEur = (n: any) => `€${Number(n).toLocaleString("en", { minimumFractionDigits: 2 })}`;
 const SIGNAL_COLOR = { BUY: "#00ff9d", SELL: "#ff4d6d", HOLD: "#ffd166" };
 const SIGNAL_BG    = { BUY: "rgba(0,255,157,0.12)", SELL: "rgba(255,77,109,0.12)", HOLD: "rgba(255,209,102,0.12)" };
 
-const CustomTooltip = ({ active, payload, label }) => {
+const CustomTooltip = ({ active, payload, label }: any) => {
   if (!active || !payload?.length) return null;
   return (
     <div style={{ background: "rgba(10,14,26,0.95)", border: "1px solid #1e3a5f", borderRadius: 8, padding: "10px 14px", fontSize: 12, color: "#a8c8e8" }}>
