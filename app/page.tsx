@@ -17,7 +17,7 @@ const CustomTooltip = ({ active, payload, label }: any) => {
   return (
     <div style={{ background: "rgba(10,14,26,0.95)", border: "1px solid #1e3a5f", borderRadius: 8, padding: "10px 14px", fontSize: 12, color: "#a8c8e8" }}>
       <p style={{ color: "#4a9eff", marginBottom: 4, fontSize: 11 }}>{label}</p>
-      {payload.map((p, i) => (
+      {payload.map((p: any, i: number) => (
         <p key={i} style={{ color: p.color, margin: "2px 0" }}>{p.name}: <span style={{ color: "#fff", fontWeight: 600 }}>€{fmt(p.value)}</span></p>
       ))}
     </div>
@@ -245,7 +245,7 @@ export default function GridMind() {
                     <XAxis dataKey="time" tick={{ fill: "#3a6a9a", fontSize: 10 }} tickLine={false} interval={7} />
                     <YAxis tick={{ fill: "#3a6a9a", fontSize: 11 }} tickFormatter={v => `€${v}`} />
                     <Tooltip content={<CustomTooltip />} />
-                    <Line type="monotone" dataKey="price" stroke="#4a9eff" strokeWidth={2} dot={(props) => {
+                    <Line type="monotone" dataKey="price" stroke="#4a9eff" strokeWidth={2} dot={(props: any) => {
                       const { cx, cy, payload } = props;
                       return <circle key={cx} cx={cx} cy={cy} r={3} fill={SIGNAL_COLOR[payload.signal] || "#4a9eff"} stroke="none" />;
                     }} />
