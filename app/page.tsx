@@ -5,7 +5,7 @@ import {
   XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend
 } from "recharts";
 
-const API = "https://gridmind-backend.onrender.com";
+const API = "https://rahulsr2806-gridmind-backend.hf.space";
 
 const fmt = (n: any) => typeof n === "number" ? n.toFixed(2) : n;
 const fmtEur = (n: any) => `€${Number(n).toLocaleString("en", { minimumFractionDigits: 2 })}`;
